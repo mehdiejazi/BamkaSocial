@@ -21,6 +21,11 @@ public class Post {
    private Vocher vocher;
    private Post parent;
 
+    private List<PostLike> postLikes;
+    private List<PostComment> postComments;
+    private List<PostReport> postReports;
+    private List<PostSeen> postSeens;
+
     public int getPostid() {
         return postid;
     }
@@ -131,5 +136,37 @@ public class Post {
 
     public void setParent(Post parent) {
         this.parent = parent;
+    }
+
+    public List<PostLike> getPostLikes() {
+        return postLikes;
+    }
+
+    public void setPostLikes(List<PostLike> postLikes) {
+        this.postLikes = postLikes;
+    }
+
+    public List<PostComment> getPostComments() {
+        return postComments;
+    }
+
+    public void setPostComments(List<PostComment> postComments) {
+        this.postComments = postComments;
+    }
+
+    public List<PostReport> getPostReports() {
+        return postReports;
+    }
+
+    public void setPostReports(List<PostReport> postReports) {
+        this.postReports = postReports;
+    }
+
+    public List<PostSeen> getPostSeens() {
+        return postSeens;
+    }
+
+    public void setPostSeens(List<PostSeen> postSeens) {
+        this.postSeens = postSeens;
     }
 }
