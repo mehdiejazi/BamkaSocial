@@ -1,5 +1,7 @@
 package ir.bamka.social.model.to;
 
+import java.util.List;
+
 public class Off {
     private int offId;
     private String url;
@@ -23,13 +25,13 @@ public class Off {
     private String sha1tag;
     private int deleted;
     private int special;
-    private Category categoryTO;
-    private InteractionBase favOffTO;
-    private int FavCount = 0;
-    private int CommentCount = 0;
-
-    public Off() {
-    }
+    private int likeCount = 0;
+    private int commentCount = 0;
+    private List<Category> categories;
+    private List<OffLike> offLikes;
+    private List<OffComment> offComments;
+    private List<OffReport> offReports;
+    private List<OffSeen> offSeens;
 
     public int getOffId() {
         return offId;
@@ -127,6 +129,14 @@ public class Off {
         this.catId = catId;
     }
 
+    public int getPublish() {
+        return publish;
+    }
+
+    public void setPublish(int publish) {
+        this.publish = publish;
+    }
+
     public String getPublishdate() {
         return publishdate;
     }
@@ -191,30 +201,6 @@ public class Off {
         this.deleted = deleted;
     }
 
-    public Category getCategoryTO() {
-        return categoryTO;
-    }
-
-    public void setCategoryTO(Category categoryTO) {
-        this.categoryTO = categoryTO;
-    }
-
-    public int getPublish() {
-        return publish;
-    }
-
-    public void setPublish(int publish) {
-        this.publish = publish;
-    }
-
-    public InteractionBase getFavOffTO() {
-        return favOffTO;
-    }
-
-    public void setFavOffTO(InteractionBase favOffTO) {
-        this.favOffTO = favOffTO;
-    }
-
     public int getSpecial() {
         return special;
     }
@@ -223,19 +209,59 @@ public class Off {
         this.special = special;
     }
 
-    public int getFavCount() {
-        return FavCount;
+    public int getLikeCount() {
+        return likeCount;
     }
 
-    public void setFavCount(int favCount) {
-        FavCount = favCount;
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
     }
 
     public int getCommentCount() {
-        return CommentCount;
+        return commentCount;
     }
 
     public void setCommentCount(int commentCount) {
-        CommentCount = commentCount;
+        this.commentCount = commentCount;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
+    public List<OffLike> getOffLikes() {
+        return offLikes;
+    }
+
+    public void setOffLikes(List<OffLike> offLikes) {
+        this.offLikes = offLikes;
+    }
+
+    public List<OffComment> getOffComments() {
+        return offComments;
+    }
+
+    public void setOffComments(List<OffComment> offComments) {
+        this.offComments = offComments;
+    }
+
+    public List<OffReport> getOffReports() {
+        return offReports;
+    }
+
+    public void setOffReports(List<OffReport> offReports) {
+        this.offReports = offReports;
+    }
+
+    public List<OffSeen> getOffSeens() {
+        return offSeens;
+    }
+
+    public void setOffSeens(List<OffSeen> offSeens) {
+        this.offSeens = offSeens;
     }
 }

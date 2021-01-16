@@ -14,6 +14,7 @@ public class Message {
     private String time;
     private User FromUser;
     private User ToUser;
+    private Image image;
 
     public int getMsgId() {
         return msgId;
@@ -101,5 +102,13 @@ public class Message {
 
     public void setToUser(User toUser) {
         ToUser = toUser;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }

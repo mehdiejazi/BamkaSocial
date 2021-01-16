@@ -1,5 +1,7 @@
 package ir.bamka.social.model.to;
 
+import java.util.List;
+
 public class Vocher {
     private int vocherId;
     private String url;
@@ -24,9 +26,13 @@ public class Vocher {
     private int catId;
     private int special;
     private Category categoryTO;
-    private InteractionBase favVocherTO;
-    private int FavCount = 0;
-    private int CommentCount = 0;
+    private int likeCount = 0;
+    private int commentCount = 0;
+    private List<Category> categories;
+    private List<VocherLike> vocherLikes;
+    private List<VocherComment> vocherComments;
+    private List<VocherReport> vocherReports;
+    private List<VocherSeen> vocherSeens;
 
     public int getVocherId() {
         return vocherId;
@@ -196,14 +202,6 @@ public class Vocher {
         this.catId = catId;
     }
 
-    public Category getCategoryTO() {
-        return categoryTO;
-    }
-
-    public void setCategoryTO(Category categoryTO) {
-        this.categoryTO = categoryTO;
-    }
-
     public int getSpecial() {
         return special;
     }
@@ -212,27 +210,67 @@ public class Vocher {
         this.special = special;
     }
 
-    public int getFavCount() {
-        return FavCount;
+    public Category getCategoryTO() {
+        return categoryTO;
     }
 
-    public void setFavCount(int favCount) {
-        FavCount = favCount;
+    public void setCategoryTO(Category categoryTO) {
+        this.categoryTO = categoryTO;
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
     }
 
     public int getCommentCount() {
-        return CommentCount;
+        return commentCount;
     }
 
     public void setCommentCount(int commentCount) {
-        CommentCount = commentCount;
+        this.commentCount = commentCount;
     }
 
-    public InteractionBase getFavVocherTO() {
-        return favVocherTO;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setFavVocherTO(InteractionBase favVocherTO) {
-        this.favVocherTO = favVocherTO;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
+    public List<VocherLike> getVocherLikes() {
+        return vocherLikes;
+    }
+
+    public void setVocherLikes(List<VocherLike> vocherLikes) {
+        this.vocherLikes = vocherLikes;
+    }
+
+    public List<VocherComment> getVocherComments() {
+        return vocherComments;
+    }
+
+    public void setVocherComments(List<VocherComment> vocherComments) {
+        this.vocherComments = vocherComments;
+    }
+
+    public List<VocherReport> getVocherReports() {
+        return vocherReports;
+    }
+
+    public void setVocherReports(List<VocherReport> vocherReports) {
+        this.vocherReports = vocherReports;
+    }
+
+    public List<VocherSeen> getVocherSeens() {
+        return vocherSeens;
+    }
+
+    public void setVocherSeens(List<VocherSeen> vocherSeens) {
+        this.vocherSeens = vocherSeens;
     }
 }

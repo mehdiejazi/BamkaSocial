@@ -1,9 +1,10 @@
 package ir.bamka.social.model.to;
 
+import java.util.List;
+
 public class Post {
 
    private  int postid;
-   private int userid;
    private String titr;
    private String posttext;
    private int accessring;
@@ -11,9 +12,9 @@ public class Post {
    private String sendtime;
    private int deleted;
    private int publish;
-   private int offid =-1;
-   private int vocherid =-1;
-   private int parentid =-1;
+
+   private List<Image> images;
+   private List<Category> categories;
 
    private User owner;
    private Off off;
@@ -26,14 +27,6 @@ public class Post {
 
     public void setPostid(int postid) {
         this.postid = postid;
-    }
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
     }
 
     public String getTitr() {
@@ -92,28 +85,20 @@ public class Post {
         this.publish = publish;
     }
 
-    public int getOffid() {
-        return offid;
+    public List<Image> getImages() {
+        return images;
     }
 
-    public void setOffid(int offid) {
-        this.offid = offid;
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 
-    public int getVocherid() {
-        return vocherid;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setVocherid(int vocherid) {
-        this.vocherid = vocherid;
-    }
-
-    public int getParentid() {
-        return parentid;
-    }
-
-    public void setParentid(int parentid) {
-        this.parentid = parentid;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     public User getOwner() {

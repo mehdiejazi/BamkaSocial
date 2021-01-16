@@ -1,19 +1,18 @@
 package ir.bamka.social.model.to;
 
-
-public class OffReport {
-    private int offReportId;
+public class VocherReport {
+    private int vocherReportId;
     private String dtstamp;
     private String text = "";
     private boolean deleted;
     private boolean publish;
 
-    public int getOffReportId() {
-        return offReportId;
+    public int getVocherReportId() {
+        return vocherReportId;
     }
 
-    public void setOffReportId(int offReportId) {
-        this.offReportId = offReportId;
+    public void setVocherReportId(int vocherReportId) {
+        this.vocherReportId = vocherReportId;
     }
 
     public String getDtstamp() {

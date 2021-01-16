@@ -1,9 +1,49 @@
 package ir.bamka.social.model.to;
 
-import ir.bamka.social.model.bases.Action;
+public class OffComment {
+    private int offCommentId;
+    private String dtstamp;
+    private String text = "";
+    private boolean deleted;
+    private boolean publish;
 
-public class OffComment extends Action {
-    public OffComment() {
-        super.setTypId(2);
+    public int getOffCommentId() {
+        return offCommentId;
+    }
+
+    public void setOffCommentId(int offCommentId) {
+        this.offCommentId = offCommentId;
+    }
+
+    public String getDtstamp() {
+        return dtstamp;
+    }
+
+    public void setDtstamp(String dtstamp) {
+        this.dtstamp = dtstamp;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    public boolean isPublish() {
+        return publish;
+    }
+
+    public void setPublish(boolean publish) {
+        this.publish = publish;
     }
 }

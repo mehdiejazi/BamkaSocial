@@ -2,17 +2,11 @@ package ir.bamka.social.model.to;
 
 public class Banner {
     private int bnrId;
-    private String imageurl;
+    private String caption;
     private int publish;
     private String dtStamp = " ";
-    private Category categoryTO;
-
-    public Banner() {
-    }
-
-    public Banner(String imageurl) {
-        this.imageurl = imageurl;
-    }
+    private Category category;
+    private Image image;
 
     public int getBnrId() {
         return bnrId;
@@ -22,12 +16,12 @@ public class Banner {
         this.bnrId = bnrId;
     }
 
-    public String getImageurl() {
-        return imageurl;
+    public String getCaption() {
+        return caption;
     }
 
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
 
     public int getPublish() {
@@ -46,11 +40,19 @@ public class Banner {
         this.dtStamp = dtStamp;
     }
 
-    public Category getCategoryTO() {
-        return categoryTO;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategoryTO(Category categoryTO) {
-        this.categoryTO = categoryTO;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }
