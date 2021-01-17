@@ -1,17 +1,27 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "tbl_Policies")
 public class Policy {
-    private int plcId;
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String title = "";
     private String policy = "";
-    private int publish = 0;
+    private boolean publish;
 
-    public int getPlcId() {
-        return plcId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setPlcId(int plcId) {
-        this.plcId = plcId;
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getTitle() {
@@ -30,11 +40,11 @@ public class Policy {
         this.policy = policy;
     }
 
-    public int getPublish() {
+    public boolean isPublish() {
         return publish;
     }
 
-    public void setPublish(int publish) {
+    public void setPublish(boolean publish) {
         this.publish = publish;
     }
 }

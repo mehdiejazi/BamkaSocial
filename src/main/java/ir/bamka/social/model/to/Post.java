@@ -1,37 +1,59 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "tbl_posts")
 public class Post {
 
-   private  int postid;
-   private String titr;
-   private String posttext;
-   private int accessring;
-   private String senddate;
-   private String sendtime;
-   private int deleted;
-   private int publish;
+    @Id
+    @GeneratedValue
+    private Long Id;
+    private String titr;
+    private String posttext;
+    private int accessring;
+    private String senddate;
+    private String sendtime;
+    private boolean deleted;
+    private boolean publish;
 
-   private List<Image> images;
-   private List<Category> categories;
+    @OneToOne
+    private List<Image> images;
 
-   private User owner;
-   private Off off;
-   private Vocher vocher;
-   private Post parent;
+    @OneToOne
+    private List<Category> categories;
 
-    private List<PostLike> postLikes;
-    private List<PostComment> postComments;
-    private List<PostReport> postReports;
-    private List<PostSeen> postSeens;
+    @ManyToOne
+    private User owner;
 
-    public int getPostid() {
-        return postid;
+    @ManyToOne
+    private Off off;
+
+    @ManyToOne
+    private Voucher vocher;
+
+    @ManyToOne
+    private Post parent;
+
+    @OneToMany
+    private List<Interaction> postLikes;
+
+    @OneToMany
+    private List<Interaction> postComments;
+
+    @OneToMany
+    private List<Interaction> postReports;
+
+    @OneToMany
+    private List<Interaction> postSeens;
+
+    public Long getId() {
+        return Id;
     }
 
-    public void setPostid(int postid) {
-        this.postid = postid;
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getTitr() {
@@ -74,19 +96,19 @@ public class Post {
         this.sendtime = sendtime;
     }
 
-    public int getDeleted() {
+    public boolean isDeleted() {
         return deleted;
     }
 
-    public void setDeleted(int deleted) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
 
-    public int getPublish() {
+    public boolean isPublish() {
         return publish;
     }
 
-    public void setPublish(int publish) {
+    public void setPublish(boolean publish) {
         this.publish = publish;
     }
 
@@ -122,11 +144,11 @@ public class Post {
         this.off = off;
     }
 
-    public Vocher getVocher() {
+    public Voucher getVocher() {
         return vocher;
     }
 
-    public void setVocher(Vocher vocher) {
+    public void setVocher(Voucher vocher) {
         this.vocher = vocher;
     }
 
@@ -138,35 +160,35 @@ public class Post {
         this.parent = parent;
     }
 
-    public List<PostLike> getPostLikes() {
+    public List<Interaction> getPostLikes() {
         return postLikes;
     }
 
-    public void setPostLikes(List<PostLike> postLikes) {
+    public void setPostLikes(List<Interaction> postLikes) {
         this.postLikes = postLikes;
     }
 
-    public List<PostComment> getPostComments() {
+    public List<Interaction> getPostComments() {
         return postComments;
     }
 
-    public void setPostComments(List<PostComment> postComments) {
+    public void setPostComments(List<Interaction> postComments) {
         this.postComments = postComments;
     }
 
-    public List<PostReport> getPostReports() {
+    public List<Interaction> getPostReports() {
         return postReports;
     }
 
-    public void setPostReports(List<PostReport> postReports) {
+    public void setPostReports(List<Interaction> postReports) {
         this.postReports = postReports;
     }
 
-    public List<PostSeen> getPostSeens() {
+    public List<Interaction> getPostSeens() {
         return postSeens;
     }
 
-    public void setPostSeens(List<PostSeen> postSeens) {
+    public void setPostSeens(List<Interaction> postSeens) {
         this.postSeens = postSeens;
     }
 }

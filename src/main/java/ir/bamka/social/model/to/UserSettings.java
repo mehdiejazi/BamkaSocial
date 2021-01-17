@@ -1,6 +1,16 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_user_settings")
 public class UserSettings {
+    @Id
+    @GeneratedValue
+    private Long Id;
     private int notifUnseenOff = 0;
     private int notifUnseenSpecialOff=0;
     private int notifUnseenMessage=0;

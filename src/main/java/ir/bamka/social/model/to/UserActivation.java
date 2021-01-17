@@ -1,23 +1,28 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_user_activations")
 public class UserActivation {
-    private int actcodeID;
+
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String code;
     private String genDate;
     private String expDate;
-    private int disabled;
+    private boolean disabled;
 
-
-    public UserActivation() {
-        setActcodeID(-1);
+    public Long getId() {
+        return Id;
     }
 
-    public int getActcodeID() {
-        return actcodeID;
-    }
-
-    public void setActcodeID(int actcodeID) {
-        this.actcodeID = actcodeID;
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getCode() {
@@ -44,11 +49,11 @@ public class UserActivation {
         this.expDate = expDate;
     }
 
-    public int getDisabled() {
+    public boolean isDisabled() {
         return disabled;
     }
 
-    public void setDisabled(int disabled) {
+    public void setDisabled(boolean disabled) {
         this.disabled = disabled;
     }
 }

@@ -1,68 +1,66 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 public class Website {
-    private int WebsiteId;
-    private String WebsiteName;
-    private String WebsiteUrl;
-    private int UserId;
-    private String Pdate;
-    private String Time;
+    @Id
+    @GeneratedValue
+    private Long Id;
+    private String name;
+    private String url;
+    private String sendDate;
+    private String sendTime;
 
-    private ir.bamka.social.model.to.User User;
+    @ManyToOne
+    private User owner;
 
-    public int getWebsiteId() {
-        return WebsiteId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setWebsiteId(int websiteId) {
-        WebsiteId = websiteId;
+    public void setId(Long id) {
+        Id = id;
     }
 
-    public String getWebsiteName() {
-        return WebsiteName;
+    public String getName() {
+        return name;
     }
 
-    public void setWebsiteName(String websiteName) {
-        WebsiteName = websiteName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getWebsiteUrl() {
-        return WebsiteUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setWebsiteUrl(String websiteUrl) {
-        WebsiteUrl = websiteUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public int getUserId() {
-        return UserId;
+    public String getSendDate() {
+        return sendDate;
     }
 
-    public void setUserId(int userId) {
-        UserId = userId;
+    public void setSendDate(String sendDate) {
+        this.sendDate = sendDate;
     }
 
-    public String getPdate() {
-        return Pdate;
+    public String getSendTime() {
+        return sendTime;
     }
 
-    public void setPdate(String pdate) {
-        Pdate = pdate;
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
     }
 
-    public String getTime() {
-        return Time;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setTime(String time) {
-        Time = time;
-    }
-
-    public ir.bamka.social.model.to.User getUser() {
-        return User;
-    }
-
-    public void setUser(ir.bamka.social.model.to.User user) {
-        User = user;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }

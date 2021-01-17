@@ -1,28 +1,27 @@
 package ir.bamka.social.model.to;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tbl_categories")
 public class Category {
-    private int catid;
+
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String catName = "";
+    private String sendDate;
+    private String sendTime;
 
-
-    public Category() {
-        catid = -1;
+    public Long getId() {
+        return Id;
     }
 
-    public Category(int catID, String catName) {
-        this.catid = catID;
-        this.catName = catName;
-    }
-
-    public int getCatid() {
-        return catid;
-    }
-
-    public void setCatid(int catid) {
-        this.catid = catid;
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getCatName() {
@@ -31,5 +30,21 @@ public class Category {
 
     public void setCatName(String catName) {
         this.catName = catName;
+    }
+
+    public String getSendDate() {
+        return sendDate;
+    }
+
+    public void setSendDate(String sendDate) {
+        this.sendDate = sendDate;
+    }
+
+    public String getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
     }
 }

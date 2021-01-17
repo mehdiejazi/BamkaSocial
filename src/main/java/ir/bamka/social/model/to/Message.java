@@ -1,75 +1,40 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "tbl_messages")
 public class Message {
 
-    private int msgId;
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String subject;
-    private String msg;
-    private int msgFromUserId = -1; // -1 = admin
-    private int msgToUserId = -1000; // -1000 = *
-    private int msgPublish = 0;
-    private String gdate;
-    private String pdate;
-    private String time;
+    private String body;
+
+    private boolean msgPublish;
+
+    private String sendDate;
+    private String sendTime;
+
+    private String publishDate;
+    private String publishTime;
+
+    @ManyToOne
     private User FromUser;
+
+    @ManyToOne
     private User ToUser;
+
+    @ManyToOne
     private Image image;
 
-    public int getMsgId() {
-        return msgId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setMsgId(int msgId) {
-        this.msgId = msgId;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public int getMsgFromUserId() {
-        return msgFromUserId;
-    }
-
-    public void setMsgFromUserId(int msgFromUserId) {
-        this.msgFromUserId = msgFromUserId;
-    }
-
-    public int getMsgToUserId() {
-        return msgToUserId;
-    }
-
-    public void setMsgToUserId(int msgToUserId) {
-        this.msgToUserId = msgToUserId;
-    }
-
-    public int getMsgPublish() {
-        return msgPublish;
-    }
-
-    public void setMsgPublish(int msgPublish) {
-        this.msgPublish = msgPublish;
-    }
-
-    public String getGdate() {
-        return gdate;
-    }
-
-    public void setGdate(String gdate) {
-        this.gdate = gdate;
-    }
-
-    public String getPdate() {
-        return pdate;
-    }
-
-    public void setPdate(String pdate) {
-        this.pdate = pdate;
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getSubject() {
@@ -80,12 +45,52 @@ public class Message {
         this.subject = subject;
     }
 
-    public String getTime() {
-        return time;
+    public String getBody() {
+        return body;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public boolean isMsgPublish() {
+        return msgPublish;
+    }
+
+    public void setMsgPublish(boolean msgPublish) {
+        this.msgPublish = msgPublish;
+    }
+
+    public String getSendDate() {
+        return sendDate;
+    }
+
+    public void setSendDate(String sendDate) {
+        this.sendDate = sendDate;
+    }
+
+    public String getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    public String getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
     }
 
     public User getFromUser() {

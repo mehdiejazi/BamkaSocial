@@ -1,19 +1,28 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_monitor")
 public class Monitor {
-    private int monId;
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String pDate;
     private int reqCount;
 
     public Monitor() {
     }
 
-    public int getMonId() {
-        return monId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setMonId(int monId) {
-        this.monId = monId;
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public String getpDate() {

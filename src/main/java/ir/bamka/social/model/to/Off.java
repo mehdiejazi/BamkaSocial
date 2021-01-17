@@ -1,9 +1,16 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "tbl_Offs")
+
 public class Off {
-    private int offId;
+
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String url;
     private String caption;
     private String location;
@@ -14,8 +21,7 @@ public class Off {
     private String imageurl;
     private String shorturl;
     private String offwebsite;
-    private int catId;
-    private int publish;
+    private boolean publish;
     private String publishdate;
     private String publishtime;
     private String senddate;
@@ -23,22 +29,32 @@ public class Off {
     private int send;
     private String tag;
     private String sha1tag;
-    private int deleted;
-    private int special;
+    private boolean deleted;
+    private boolean special;
     private int likeCount = 0;
     private int commentCount = 0;
-    private List<Category> categories;
-    private List<OffLike> offLikes;
-    private List<OffComment> offComments;
-    private List<OffReport> offReports;
-    private List<OffSeen> offSeens;
 
-    public int getOffId() {
-        return offId;
+    @OneToMany
+    private List<Category> categories;
+
+    @OneToMany
+    private List<Interaction> offLikes;
+
+    @OneToMany
+    private List<Interaction> offComments;
+
+    @OneToMany
+    private List<Interaction> offReports;
+
+    @OneToMany
+    private List<Interaction> offSeens;
+
+    public Long getId() {
+        return Id;
     }
 
-    public void setOffId(int offId) {
-        this.offId = offId;
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getUrl() {
@@ -121,19 +137,11 @@ public class Off {
         this.offwebsite = offwebsite;
     }
 
-    public int getCatId() {
-        return catId;
-    }
-
-    public void setCatId(int catId) {
-        this.catId = catId;
-    }
-
-    public int getPublish() {
+    public boolean isPublish() {
         return publish;
     }
 
-    public void setPublish(int publish) {
+    public void setPublish(boolean publish) {
         this.publish = publish;
     }
 
@@ -193,19 +201,19 @@ public class Off {
         this.sha1tag = sha1tag;
     }
 
-    public int getDeleted() {
+    public boolean isDeleted() {
         return deleted;
     }
 
-    public void setDeleted(int deleted) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
 
-    public int getSpecial() {
+    public boolean isSpecial() {
         return special;
     }
 
-    public void setSpecial(int special) {
+    public void setSpecial(boolean special) {
         this.special = special;
     }
 
@@ -233,35 +241,35 @@ public class Off {
         this.categories = categories;
     }
 
-    public List<OffLike> getOffLikes() {
+    public List<Interaction> getOffLikes() {
         return offLikes;
     }
 
-    public void setOffLikes(List<OffLike> offLikes) {
+    public void setOffLikes(List<Interaction> offLikes) {
         this.offLikes = offLikes;
     }
 
-    public List<OffComment> getOffComments() {
+    public List<Interaction> getOffComments() {
         return offComments;
     }
 
-    public void setOffComments(List<OffComment> offComments) {
+    public void setOffComments(List<Interaction> offComments) {
         this.offComments = offComments;
     }
 
-    public List<OffReport> getOffReports() {
+    public List<Interaction> getOffReports() {
         return offReports;
     }
 
-    public void setOffReports(List<OffReport> offReports) {
+    public void setOffReports(List<Interaction> offReports) {
         this.offReports = offReports;
     }
 
-    public List<OffSeen> getOffSeens() {
+    public List<Interaction> getOffSeens() {
         return offSeens;
     }
 
-    public void setOffSeens(List<OffSeen> offSeens) {
+    public void setOffSeens(List<Interaction> offSeens) {
         this.offSeens = offSeens;
     }
 }

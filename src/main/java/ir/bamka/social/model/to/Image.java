@@ -1,15 +1,25 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_images")
 public class Image {
-    private int imgId;
+
+    @Id
+    @GeneratedValue
+    private Long Id;
     private int imageUrl;
 
-    public int getImgId() {
-        return imgId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setImgId(int imgId) {
-        this.imgId = imgId;
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public int getImageUrl() {

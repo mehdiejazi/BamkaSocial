@@ -1,19 +1,23 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-public class OffReport {
-    private int offReportId;
+public class Interaction {
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String dtstamp;
     private String text = "";
     private boolean deleted;
     private boolean publish;
 
-    public int getOffReportId() {
-        return offReportId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setOffReportId(int offReportId) {
-        this.offReportId = offReportId;
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public String getDtstamp() {

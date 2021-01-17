@@ -1,59 +1,68 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_user_logs")
 public class UserLog {
 
-    private long id;
-    private String IP;
-    private String Event;
-    private String GDate;
-    private String PDate;
-    private String Time;
+    @Id
+    @GeneratedValue
+    private Long Id;
+    private String ip;
+    private String event;
+    private String gDate;
+    private String pDate;
+    private String time;
 
-    public long getId() {
-        return id;
+    public Long getId() {
+        return Id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(Long id) {
+        Id = id;
     }
 
-    public String getIP() {
-        return IP;
+    public String getIp() {
+        return ip;
     }
 
-    public void setIP(String IP) {
-        this.IP = IP;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public String getEvent() {
-        return Event;
+        return event;
     }
 
     public void setEvent(String Event) {
-        this.Event = Event;
+        this.event = Event;
     }
 
-    public String getGDate() {
-        return GDate;
+    public String getgDate() {
+        return gDate;
     }
 
-    public void setGDate(String GDate) {
-        this.GDate = GDate;
+    public void setgDate(String gDate) {
+        this.gDate = gDate;
     }
 
-    public String getPDate() {
-        return PDate;
+    public String getpDate() {
+        return pDate;
     }
 
-    public void setPDate(String PDate) {
-        this.PDate = PDate;
+    public void setpDate(String pDate) {
+        this.pDate = pDate;
     }
 
     public String getTime() {
-        return Time;
+        return time;
     }
 
-    public void setTime(String Time) {
-        this.Time = Time;
+    public void setTime(String time) {
+        this.time = time;
     }
 }

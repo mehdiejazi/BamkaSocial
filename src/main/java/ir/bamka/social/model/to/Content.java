@@ -1,20 +1,29 @@
 package ir.bamka.social.model.to;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_contents")
 public class Content {
-    private int id;
+
+    @Id
+    @GeneratedValue
+    private Long Id;
     private String content = "";
 
-    public int getId() {
-        return id;
+    public Long getId() {
+        return Id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public String getContent() {
-        if (content.isEmpty())
-            content = "";
         return content;
     }
 

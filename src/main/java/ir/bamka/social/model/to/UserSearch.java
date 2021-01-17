@@ -1,49 +1,60 @@
 package ir.bamka.social.model.to;
 
-public class UserSearch {
-    private int Id;
-    private String Q;
-    private int Counter;
-    private String LastDate;
-    private String LastTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    public int getId() {
+
+@Entity
+@Table(name = "tbl_user_searches")
+public class UserSearch {
+
+    @Id
+    @GeneratedValue
+    private Long Id;
+    private String q;
+    private int counter;
+    private String lastDate;
+    private String lastTime;
+
+    public Long getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         Id = id;
     }
 
     public String getQ() {
-        return Q;
+        return q;
     }
 
     public void setQ(String q) {
-        Q = q;
+        this.q = q;
     }
 
     public int getCounter() {
-        return Counter;
+        return counter;
     }
 
     public void setCounter(int counter) {
-        Counter = counter;
+        this.counter = counter;
     }
 
     public String getLastDate() {
-        return LastDate;
+        return lastDate;
     }
 
     public void setLastDate(String lastDate) {
-        LastDate = lastDate;
+        this.lastDate = lastDate;
     }
 
     public String getLastTime() {
-        return LastTime;
+        return lastTime;
     }
 
     public void setLastTime(String lastTime) {
-        LastTime = lastTime;
+        this.lastTime = lastTime;
     }
 }
