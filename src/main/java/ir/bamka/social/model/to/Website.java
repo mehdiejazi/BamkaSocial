@@ -1,9 +1,9 @@
 package ir.bamka.social.model.to;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "tbl_websites")
 public class Website {
     @Id
     @GeneratedValue

@@ -1,10 +1,9 @@
 package ir.bamka.social.model.to;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
-
+@Entity
+@Table(name = "tbl_vouchers")
 public class Voucher {
 
     @Id

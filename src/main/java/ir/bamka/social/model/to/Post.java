@@ -18,20 +18,20 @@ public class Post {
     private boolean deleted;
     private boolean publish;
 
-    @OneToOne
+    @OneToMany
     private List<Image> images;
 
-    @OneToOne
+    @OneToMany
     private List<Category> categories;
 
     @ManyToOne
     private User owner;
 
-    @ManyToOne
+    @OneToOne
     private Off off;
 
-    @ManyToOne
-    private Voucher vocher;
+    @OneToOne
+    private Voucher voucher;
 
     @ManyToOne
     private Post parent;
@@ -145,11 +145,11 @@ public class Post {
     }
 
     public Voucher getVocher() {
-        return vocher;
+        return voucher;
     }
 
     public void setVocher(Voucher vocher) {
-        this.vocher = vocher;
+        this.voucher = vocher;
     }
 
     public Post getParent() {
