@@ -1,4 +1,4 @@
-package ir.bamka.social.model.viewmodel;
+package ir.bamka.social.viewmodel;
 
 public class UserActive {
     private String UserName;

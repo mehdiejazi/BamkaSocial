@@ -1,4 +1,4 @@
-package ir.bamka.social.model.viewmodel;
+package ir.bamka.social.viewmodel;
 
 import ir.bamka.social.model.to.User;
 

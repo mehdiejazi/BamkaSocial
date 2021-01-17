@@ -1,8 +1,12 @@
 package ir.bamka.social.model.to;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tbl_interactions")
 public class Interaction {
     @Id
     @GeneratedValue

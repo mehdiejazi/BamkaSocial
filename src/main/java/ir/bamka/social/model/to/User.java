@@ -36,7 +36,7 @@ public class User {
     private List<UserActivation> userActivations;
 
     @OneToMany
-    private List<UserLog> userActLog;
+    private List<UserLog> userLogs;
 
     @OneToMany
     private List<UserSearch> userSearches;
@@ -67,6 +67,19 @@ public class User {
 
     @OneToMany
     private List<Interaction> voucherSeens;
+
+
+    @OneToMany
+    private List<Interaction> PostComments;
+
+    @OneToMany
+    private List<Interaction> PostLikes;
+
+    @OneToMany
+    private List<Interaction> PostReports;
+
+    @OneToMany
+    private List<Interaction> PostSeens;
 
     public Long getId() {
         return Id;
@@ -172,12 +185,12 @@ public class User {
         this.userActivations = userActivations;
     }
 
-    public List<UserLog> getUserActLog() {
-        return userActLog;
+    public List<UserLog> getUserLogs() {
+        return userLogs;
     }
 
-    public void setUserActLog(List<UserLog> userActLog) {
-        this.userActLog = userActLog;
+    public void setUserLogs(List<UserLog> userLogs) {
+        this.userLogs = userLogs;
     }
 
     public List<UserSearch> getUserSearches() {
@@ -258,5 +271,37 @@ public class User {
 
     public void setVoucherSeens(List<Interaction> voucherSeens) {
         this.voucherSeens = voucherSeens;
+    }
+
+    public List<Interaction> getPostComments() {
+        return PostComments;
+    }
+
+    public void setPostComments(List<Interaction> postComments) {
+        PostComments = postComments;
+    }
+
+    public List<Interaction> getPostLikes() {
+        return PostLikes;
+    }
+
+    public void setPostLikes(List<Interaction> postLikes) {
+        PostLikes = postLikes;
+    }
+
+    public List<Interaction> getPostReports() {
+        return PostReports;
+    }
+
+    public void setPostReports(List<Interaction> postReports) {
+        PostReports = postReports;
+    }
+
+    public List<Interaction> getPostSeens() {
+        return PostSeens;
+    }
+
+    public void setPostSeens(List<Interaction> postSeens) {
+        PostSeens = postSeens;
     }
 }
