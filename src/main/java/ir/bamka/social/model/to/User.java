@@ -27,6 +27,9 @@ public class User {
     private UserSettings userSettings;
 
     @OneToMany
+    private List<User> followingUsers;
+
+    @OneToMany
     private List<Category> categoriesFollowed;
 
     @OneToMany
@@ -143,6 +146,14 @@ public class User {
 
     public void setUserSettings(UserSettings userSettings) {
         this.userSettings = userSettings;
+    }
+
+    public List<User> getFollowingUsers() {
+        return followingUsers;
+    }
+
+    public void setFollowingUsers(List<User> followingUsers) {
+        this.followingUsers = followingUsers;
     }
 
     public List<Category> getCategoriesFollowed() {
