@@ -1,10 +1,10 @@
 # BamkaSocial
 
-A social networking application built with Java.
+A social platform for sharing offers and coupons with community, built with Java.
 
 ## Description
 
-BamkaSocial is a social networking platform that enables users to connect, share, and communicate. It's built using Java for robust backend operations.
+BamkaSocial is a vibrant community platform built with Java that enables users to discover, share, and discuss the latest offers and coupons. It provides a social networking experience where users can follow each other, share deals they find, and help the community save money.
 
 ## Technologies Used
 
@@ -17,12 +17,16 @@ BamkaSocial is a social networking platform that enables users to connect, share
 
 ## Key Features
 
-- User profile management
-- Social networking capabilities
-- Real-time notifications
-- Message and communication features
-- Content sharing and interaction
-- Community management
+- User profile and community management
+- Offer and coupon sharing
+- Deal discovery and search
+- User follow/follower system
+- Comments and discussions on offers
+- Deal upvoting/rating system
+- Real-time notifications for new offers
+- User authentication and authorization
+- Coupon validation and redemption tracking
+- Category-based offer organization
 
 ## Getting Started
 
@@ -35,7 +39,7 @@ BamkaSocial is a social networking platform that enables users to connect, share
 ### Installation
 
 1. Clone the repository
-2. Configure `application.properties` or `application.yml`
+2. Configure `application.properties` or `application.yml` with your database settings
 3. Build the project: `mvn clean install` or `gradle build`
 4. Run the application: `mvn spring-boot:run` or `gradle bootRun`
 
@@ -47,11 +51,28 @@ src/
 │   ├── java/
 │   │   └── com/bamka/
 │   │       ├── controller/
+│   │       │   ├── OfferController.java
+│   │       │   ├── UserController.java
+│   │       │   └── CouponController.java
 │   │       ├── service/
 │   │       ├── repository/
 │   │       └── model/
+│   │           ├── User.java
+│   │           ├── Offer.java
+│   │           └── Coupon.java
 │   └── resources/
+│       └── application.properties
+└── test/
 ```
+
+## API Endpoints
+
+- `GET /api/offers` - Get all offers
+- `POST /api/offers` - Share a new offer
+- `GET /api/offers/search` - Search offers
+- `POST /api/coupons` - Share a coupon
+- `GET /api/users/{id}` - Get user profile
+- `POST /api/users/{id}/follow` - Follow a user
 
 ## License
 
